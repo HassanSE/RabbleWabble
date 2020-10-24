@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,11 +12,77 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="QuestionViewController" customModule="RabbleWabble" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="QuestionView" customModule="RabbleWabble" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prompt" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBm-VX-CoV">
+                                <rect key="frame" x="0.0" y="104" width="414" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hint" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3R-UI-K7H">
+                                <rect key="frame" x="0.0" y="172" width="414" height="28.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k62-6n-Uth">
+                                <rect key="frame" x="0.0" y="250.66666666666666" width="414" height="57.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvD-GG-Igd">
+                                <rect key="frame" x="32" y="711" width="80" height="80"/>
+                                <state key="normal" image="ic_circle_x"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcx-tc-b25">
+                                <rect key="frame" x="62" y="799" width="20" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" red="0.95539218189999997" green="0.1762931049" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xgb-j0-FKc">
+                                <rect key="frame" x="302" y="711" width="80" height="80"/>
+                                <state key="normal" image="ic_circle_check"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0E4-BJ-mF1">
+                                <rect key="frame" x="332" y="799" width="20" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" red="0.223705709" green="0.64062780139999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xBm-VX-CoV" secondAttribute="trailing" id="1iV-Us-CMr"/>
+                            <constraint firstItem="xBm-VX-CoV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="58S-rA-KgM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="k62-6n-Uth" secondAttribute="trailing" id="7A0-xB-oPn"/>
+                            <constraint firstItem="k62-6n-Uth" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DZC-Jk-HK9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0E4-BJ-mF1" secondAttribute="bottom" constant="24" id="GSS-83-4JR"/>
+                            <constraint firstItem="k62-6n-Uth" firstAttribute="top" secondItem="P3R-UI-K7H" secondAttribute="bottom" constant="50" id="HFt-yq-cVt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="P3R-UI-K7H" secondAttribute="trailing" id="Lvz-c3-DBx"/>
+                            <constraint firstItem="xBm-VX-CoV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Qoh-a2-BPa"/>
+                            <constraint firstItem="P3R-UI-K7H" firstAttribute="top" secondItem="xBm-VX-CoV" secondAttribute="bottom" constant="8" id="Rhd-t9-wfr"/>
+                            <constraint firstItem="tcx-tc-b25" firstAttribute="top" secondItem="QvD-GG-Igd" secondAttribute="bottom" constant="8" id="WfO-0b-87x"/>
+                            <constraint firstItem="0E4-BJ-mF1" firstAttribute="top" secondItem="Xgb-j0-FKc" secondAttribute="bottom" constant="8" id="YSW-D9-qZf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xgb-j0-FKc" secondAttribute="trailing" constant="32" id="Ymv-rc-3Rl"/>
+                            <constraint firstItem="tcx-tc-b25" firstAttribute="centerX" secondItem="QvD-GG-Igd" secondAttribute="centerX" id="bgP-PR-6Py"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tcx-tc-b25" secondAttribute="bottom" constant="24" id="crx-Qt-EXo"/>
+                            <constraint firstItem="QvD-GG-Igd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="flk-si-tfO"/>
+                            <constraint firstItem="0E4-BJ-mF1" firstAttribute="centerX" secondItem="Xgb-j0-FKc" secondAttribute="centerX" id="mcE-Lf-RUX"/>
+                            <constraint firstItem="P3R-UI-K7H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ttm-kY-UWh"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="answerLabel" destination="k62-6n-Uth" id="esP-Mn-QE4"/>
+                            <outlet property="correctCountLabel" destination="0E4-BJ-mF1" id="GcM-tU-LMp"/>
+                            <outlet property="hintLabel" destination="P3R-UI-K7H" id="bqO-Fg-Zm6"/>
+                            <outlet property="incorrectCountLabel" destination="tcx-tc-b25" id="zVO-uU-4HZ"/>
+                            <outlet property="promptLabel" destination="xBm-VX-CoV" id="Zwh-jR-zgn"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -25,6 +91,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_circle_check" width="80" height="80"/>
+        <image name="ic_circle_x" width="80" height="80"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
